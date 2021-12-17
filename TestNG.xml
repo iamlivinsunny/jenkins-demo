@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+  
+<suite name="DataExtraction" verbose="1" >
+  <test name="BBC_URL_Extraction" >
+    <classes>
+       <class name="tests.Test_001_ScrapBBCWebsite" />
+    </classes>
+  </test>
+</suite>
