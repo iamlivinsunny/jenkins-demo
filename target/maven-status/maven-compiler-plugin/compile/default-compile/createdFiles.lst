@@ -1,1 +1,5 @@
 tests\Test_001_ScrapBBCWebsite.class
+utility\DriverHandle.class
+utility\ExcelHandle.class
+utility\WebActions.class
+pages\HomePage.class

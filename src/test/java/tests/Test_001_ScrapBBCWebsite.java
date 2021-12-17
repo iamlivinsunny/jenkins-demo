@@ -26,7 +26,8 @@ public class Test_001_ScrapBBCWebsite {
 	public void getBBCWebSiteDetails() throws IOException {
 		HomePage oHomePage = new HomePage();
 		LinkedHashMap<String, String[]> detailsMap = oHomePage.getAllURLPresent(driver, url);
-		ExcelHandle.writeUrlDataIntoExcelFile(System.getProperty("user.dir") + "/ExcelResult", detailsMap);
+//		ExcelHandle.writeUrlDataIntoExcelFile(System.getProperty("user.dir") + "/ExcelResult", detailsMap);
+		ExcelHandle.writeUrlDataIntoExcelFile("C:\\Users\\TestingAccount\\Desktop\\Extracted Results", detailsMap);
 	}
 
 	@AfterTest

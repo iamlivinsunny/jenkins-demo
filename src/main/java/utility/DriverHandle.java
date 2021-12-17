@@ -13,7 +13,7 @@ public class DriverHandle {
 				System.getProperty("user.dir") + "/src/test/resources/driver/chromedriver.exe");
 		// set chrome options
 		ChromeOptions options = new ChromeOptions();
-//		options.addArguments("--headless");
+		options.addArguments("--headless");
 		options.addArguments("start-maximized");
 		// initialize driver
 		driver = new ChromeDriver(options);

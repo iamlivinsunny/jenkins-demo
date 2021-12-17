@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-12-17T07:38:42 IST" name="DataExtraction" finished-at="2021-12-17T07:39:04 IST" duration-ms="22280">
+  <suite name="DataExtraction" duration-ms="25616" started-at="2021-12-17T08:06:17 IST" finished-at="2021-12-17T08:06:42 IST">
     <groups>
     </groups>
-    <test started-at="2021-12-17T07:38:42 IST" name="BBC_URL_Extraction" finished-at="2021-12-17T07:39:04 IST" duration-ms="22280">
+    <test name="BBC_URL_Extraction" duration-ms="25616" started-at="2021-12-17T08:06:17 IST" finished-at="2021-12-17T08:06:42 IST">
       <class name="tests.Test_001_ScrapBBCWebsite">
-        <test-method is-config="true" signature="startExecution()[pri:0, instance:tests.Test_001_ScrapBBCWebsite@484970b0]" started-at="2021-12-17T07:38:42 IST" name="startExecution" finished-at="2021-12-17T07:38:56 IST" duration-ms="14622" status="PASS">
+        <test-method status="PASS" signature="startExecution()[pri:0, instance:tests.Test_001_ScrapBBCWebsite@6c49835d]" name="startExecution" is-config="true" duration-ms="17187" started-at="2021-12-17T08:06:17 IST" finished-at="2021-12-17T08:06:34 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startExecution -->
-        <test-method signature="getBBCWebSiteDetails()[pri:0, instance:tests.Test_001_ScrapBBCWebsite@484970b0]" started-at="2021-12-17T07:38:56 IST" name="getBBCWebSiteDetails" finished-at="2021-12-17T07:39:04 IST" duration-ms="7427" status="PASS">
+        <test-method status="PASS" signature="getBBCWebSiteDetails()[pri:0, instance:tests.Test_001_ScrapBBCWebsite@6c49835d]" name="getBBCWebSiteDetails" duration-ms="7825" started-at="2021-12-17T08:06:34 IST" finished-at="2021-12-17T08:06:42 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getBBCWebSiteDetails -->
-        <test-method is-config="true" signature="stopExecution()[pri:0, instance:tests.Test_001_ScrapBBCWebsite@484970b0]" started-at="2021-12-17T07:39:04 IST" name="stopExecution" finished-at="2021-12-17T07:39:04 IST" duration-ms="199" status="PASS">
+        <test-method status="PASS" signature="stopExecution()[pri:0, instance:tests.Test_001_ScrapBBCWebsite@6c49835d]" name="stopExecution" is-config="true" duration-ms="583" started-at="2021-12-17T08:06:42 IST" finished-at="2021-12-17T08:06:42 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopExecution -->
