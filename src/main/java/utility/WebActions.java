@@ -1,6 +1,7 @@
 package utility;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -33,8 +34,42 @@ public class WebActions {
 		}
 
 	}
+
+	public static String getTextUsingJavaScript(WebDriver driver, By byObject, int waitTime) {
+		String content = null;
+		WebDriverWait wait = new WebDriverWait(driver, waitTime);
+		try {
+			WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(byObject));
+			content = element.getText();
+			if (content == null || content.trim() == "") {
+				JavascriptExecutor jse = (JavascriptExecutor) driver;
+				content = (String) jse.executeScript(" return arguments[0].textContent", element);
+			}
+		} catch (Exception ex) {
+			return null;
+		}
+		return content;
+	}
 	
-	public static String getAttribute(WebDriver driver, WebElement parentElement, By childElementByObject, String attribute, int waitTime) {
+	
+	public static String getTextUsingJavaScript(WebDriver driver, WebElement element, int waitTime) {
+		String content = null;
+		WebDriverWait wait = new WebDriverWait(driver, waitTime);
+		try {
+			content = element.getText();
+			if (content == null || content.trim() == "") {
+				JavascriptExecutor jse = (JavascriptExecutor) driver;
+				content = (String) jse.executeScript(" return arguments[0].textContent", element);
+			}
+		} catch (Exception ex) {
+			return null;
+		}
+		return content;
+	}
+	
+
+	public static String getAttribute(WebDriver driver, WebElement parentElement, By childElementByObject,
+			String attribute, int waitTime) {
 		String content = null;
 		WebDriverWait wait = new WebDriverWait(driver, waitTime);
 		try {
@@ -45,7 +80,5 @@ public class WebActions {
 		}
 
 	}
-	
-	
 
 }

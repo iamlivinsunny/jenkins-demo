@@ -11,47 +11,32 @@ import org.openqa.selenium.WebElement;
 import utility.BrowserHandle;
 import utility.WebActions;
 
-public class HomePage {
+public class HomePage_Old {
 
 	public LinkedHashMap<String, String[]> getAllURLPresent(WebDriver driver, String baseURL) {
 		LinkedHashMap<String, String[]> linkDetails = null;
-		int counter = 1;
+
 		try {
 			linkDetails = new LinkedHashMap<String, String[]>();
 			// Get all possible elements with link
 			List<WebElement> linkElements = driver.findElements(By.xpath("//a"));
 			// Get the link details
-			for (WebElement linkElement : linkElements) {
-				// Storing the title of the link present in the home page
-				String title_backup = linkElement.getText();
-				if (title_backup.trim().equals("") || title_backup == null) 
-					title_backup = linkElement.findElement(By.xpath("..")).getText();
-					if (title_backup.trim().equals("") || title_backup == null) 
-						title_backup = WebActions.getTextUsingJavaScript(driver, linkElement, 1);					
-				
-				String key = "key" + counter;
+			for (WebElement linkElement : linkElements) {				
 				// Get the url
 				String url = linkElement.getAttribute("href");
 				// update the url
 				if (!url.contains("http"))
-					url = baseURL + url;
+					url = baseURL + url;				
 				// creating an array to store details
-				String[] detailsArray = new String[3];
+				String[] detailsArray = new String[2];
 				// Finding all link elements
-				detailsArray = BrowserHandle.createNewWindowAndSwitchToTheWindow(driver, url);
-				// If the extracted title is null /empty then coping the old
-				if (detailsArray[1] == null || detailsArray[1].trim().equals("")) {
-					detailsArray[1] = title_backup;
-				}
-				// Saving url as the first element
-				detailsArray[0] = url;
-				// put details in to the map
-				linkDetails.put(key, detailsArray);
-				// Increase the counter
-				counter++;
-//				if (counter > 30)
-//					break;
-				System.out.println(counter);
+				detailsArray[0] = linkElement.getText();
+				if(detailsArray[0] == null || detailsArray[0].trim().equals(""))
+					detailsArray[0] = linkElement.findElement(By.xpath("..")).getText();
+				// Get the text of the link
+//				detailsArray[1] = BrowserHandle.createNewWindowAndSwitchToTheWindow(driver, url);
+				
+				linkDetails.put(url, detailsArray);
 			}
 
 			// Get all possible elements with link
